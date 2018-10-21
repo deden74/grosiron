@@ -18,7 +18,7 @@ app.get("/transactions", async (req, res) => {
     const transactions = await client.query("SELECT * FROM transactions;");
     res.header("Content-Type", "application/json");
     res.status(200);
-    return res.json({ data: products.rows });
+    return res.json({ data: transactions.rows });
   } catch (e) {
     console.error(e);
     res.status(500);
